@@ -1,0 +1,42 @@
+{
+  "name": "dn-csv-processor",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app) [![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "dayjs": "^1.9.4",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.4",
+    "@types/lodash": "^4.14.164",
+    "autoprefixer": "^10.0.1",
+    "css-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^1.2.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.1.4",
+    "postcss-loader": "^4.0.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.28.0",
+    "sass-loader": "^10.0.5",
+    "terser-webpack-plugin": "^5.0.3",
+    "ts-loader": "^8.0.7",
+    "typescript": "^4.0.5",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
+  },
+  "scripts": {
+    "dev": "webpack -w --mode development",
+    "build": "webpack --mode production",
+    "postbuild": "rimraf ./webroot/js/**/*.map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
