@@ -24,6 +24,7 @@ use Cake\View\View;
  */
 class AppView extends View
 {
+    use BodyClassTrait;
 
     /**
      * Initialization hook method.
@@ -36,5 +37,6 @@ class AppView extends View
      */
     public function initialize()
     {
+        parent::initialize();
     }
 }
