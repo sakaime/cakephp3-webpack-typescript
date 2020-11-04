@@ -2,11 +2,11 @@
     "compilerOptions": {
         "sourceMap": true,
         "target": "es5",
-        "module": "es2015",
+        "module": "esnext",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true ,
     },
     "include": [
-        "assets/js/**/*"
+        "assets/ts/**/*"
     ],
 }
