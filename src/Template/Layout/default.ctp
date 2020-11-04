@@ -7,7 +7,7 @@
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('app.css') ?>
 </head>
-<body <?= $this->getBodyData() ?> <?= $this->getBodyClass() ?>>
+<body id="body" <?= $this->getBodyData() ?> <?= $this->getBodyClass() ?>>
     <?= $this->fetch('content') ?>
     <?= $this->Html->script('app.js') ?>
 </body>
