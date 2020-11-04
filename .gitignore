@@ -41,3 +41,7 @@ nbproject/*
 .sass-cache/
 
 /node_modules/
+/webroot/css/*.css
+/webroot/css/*.css.map
+/webroot/js/*.js
+/webroot/js/*.js.map

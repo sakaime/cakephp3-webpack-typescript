@@ -5,7 +5,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => ({
-    entry: "./assets/js/app.ts",
+    entry: "./assets/ts/app.ts",
 
     output: {
         path: path.resolve(__dirname, "webroot"),
@@ -47,6 +47,7 @@ module.exports = (env, argv) => ({
                             sourceMap: argv.mode === "development",
                         },
                     },
+                    "import-glob-loader",
                 ],
             },
         ],
@@ -60,6 +61,9 @@ module.exports = (env, argv) => ({
         }),
         new webpack.ProvidePlugin({
             $: "jquery",
+        }),
+        new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 1,
         }),
     ],
 
