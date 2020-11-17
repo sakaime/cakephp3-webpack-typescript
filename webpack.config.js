@@ -1,8 +1,8 @@
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserJSPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => ({
     entry: "./assets/ts/app.ts",
@@ -34,8 +34,8 @@ module.exports = (env, argv) => ({
                     {
                         loader: "postcss-loader",
                         options: {
+                            sourceMap: argv.mode === "development",
                             postcssOptions: {
-                                sourceMap: argv.mode === "development",
                                 plugins: [
                                     require("autoprefixer")({ grid: true }),
                                 ],
@@ -69,7 +69,16 @@ module.exports = (env, argv) => ({
     ],
 
     optimization: {
-        minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false
+            }),
+            new CssMinimizerPlugin(),
+        ],
+    },
+
+    performance: {
+        maxEntrypointSize: 500000,
     },
 
     resolve: {
